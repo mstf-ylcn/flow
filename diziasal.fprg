@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Win7"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-11-11 04:22:09 "/>
+        <attribute name="created" value="V2luNztXSU43LUJJTEdJU0FZQVI7MjAxOS0xMS0xMTsiMDM6NDk6MTIgIjsyNjI4"/>
+        <attribute name="edited" value="V2luNztXSU43LUJJTEdJU0FZQVI7MjAxOS0xMS0xMTsiMDQ6MjI6MDkgIjsxOzI3MzQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="sayac, sayac3, i, as" type="Integer" array="False" size=""/>
+            <declare name="dizi, asal" type="Integer" array="True" size="20"/>
+            <assign variable="sayac3" expression="-1"/>
+            <assign variable="sayac" expression="0"/>
+            <for variable="i" start="0" end="19" direction="inc" step="1">
+                <assign variable="dizi[i]" expression="Random(11)+1"/>
+            </for>
+            <for variable="i" start="0" end="19" direction="inc" step="1">
+                <assign variable="sayac" expression="0"/>
+                <for variable="as" start="2" end="dizi[i]" direction="inc" step="1">
+                    <if expression="dizi[i]%as == 0">
+                        <then>
+                            <assign variable="sayac" expression="sayac+1"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <if expression="sayac == 1">
+                    <then>
+                        <assign variable="sayac3" expression="sayac3+1"/>
+                        <assign variable="asal[sayac3]" expression="dizi[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <for variable="i" start="0" end="sayac3" direction="inc" step="1">
+                <output expression="asal[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

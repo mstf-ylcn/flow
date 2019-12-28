@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Win7"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-12-03 11:50:48 "/>
+        <attribute name="created" value="V2luNztXSU43LUJJTEdJU0FZQVI7MjAxOS0xMi0wMzsiMTE6MjY6NTcgIjsyNjMz"/>
+        <attribute name="edited" value="V2luNztXSU43LUJJTEdJU0FZQVI7MjAxOS0xMi0wMzsiMTE6NTA6NDggIjsyOzI3Mzk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, buyuk, kucuk" type="Integer" array="False" size=""/>
+            <declare name="dizi" type="Integer" array="True" size="50"/>
+            <for variable="i" start="0" end="49" direction="inc" step="1">
+                <assign variable="dizi[i]" expression="Random(100)"/>
+            </for>
+            <assign variable="buyuk" expression="max(dizi)"/>
+            <assign variable="kucuk" expression="min(dizi)"/>
+            <output expression="&quot;buyuk say&#305;&quot;&amp;buyuk&amp;&quot;-&quot;&amp;&quot;kucuk say&#305;&quot;&amp;kucuk" newline="True"/>
+        </body>
+    </function>
+    <function name="max" type="Integer" variable="sonuc">
+        <parameters>
+            <parameter name="say" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="sonuc, i, kontrol" type="Integer" array="False" size=""/>
+            <assign variable="sonuc" expression="say[0]"/>
+            <for variable="i" start="0" end="49" direction="inc" step="1">
+                <if expression="sonuc&gt;say[i]">
+                    <then/>
+                    <else>
+                        <assign variable="sonuc" expression="say[i]"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="min" type="Integer" variable="sonuc">
+        <parameters>
+            <parameter name="say" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="sonuc, i" type="Integer" array="False" size=""/>
+            <assign variable="sonuc" expression="say[0]"/>
+            <for variable="i" start="0" end="49" direction="inc" step="1">
+                <if expression="sonuc&lt;say[i]">
+                    <then/>
+                    <else>
+                        <assign variable="sonuc" expression="say[i]"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Win7"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-11-14 09:07:43 "/>
+        <attribute name="created" value="V2luNztXSU43LUJJTEdJU0FZQVI7MjAxOS0xMS0xNDsiMDg6NTQ6MjAgIjsyNjMx"/>
+        <attribute name="edited" value="V2luNztXSU43LUJJTEdJU0FZQVI7MjAxOS0xMS0xNDsiMDk6MDc6NDMgIjsxOzI3NDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="saat, dk, sa, a" type="Integer" array="False" size=""/>
+            <assign variable="a" expression="1"/>
+            <output expression="&quot;saati giriniz&quot;" newline="True"/>
+            <input variable="saat"/>
+            <while expression="saat&gt;23">
+                <output expression="&quot;0 ile 23 aras&#305; g&#305;r&#305;n&#305;z&quot;" newline="True"/>
+                <input variable="saat"/>
+            </while>
+            <output expression="&quot;dakikay&#305; giriniz&quot;" newline="True"/>
+            <input variable="dk"/>
+            <while expression="dk&gt;59">
+                <output expression="&quot;0 ile 59 aras&#305; g&#305;r&#305;n&#305;z&quot;" newline="True"/>
+                <input variable="dk"/>
+            </while>
+            <output expression="&quot;saniyeyi giriniz&quot;" newline="True"/>
+            <input variable="sa"/>
+            <while expression="sa&gt;59">
+                <output expression="&quot;0 ile 59 aras&#305; g&#305;r&#305;n&#305;z&quot;" newline="True"/>
+                <input variable="sa"/>
+            </while>
+            <while expression="a&gt;0">
+                <assign variable="sa" expression="sa+1"/>
+                <if expression="sa&gt;59">
+                    <then>
+                        <assign variable="dk" expression="dk+1"/>
+                        <assign variable="sa" expression="0"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="dk&gt;59">
+                    <then>
+                        <assign variable="saat" expression="saat+1"/>
+                        <assign variable="dk" expression="0"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="saat&gt;=24">
+                    <then>
+                        <assign variable="saat" expression="0"/>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="saat&amp;&quot;.&quot;&amp;dk&amp;&quot;.&quot;&amp;sa" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
